@@ -1,0 +1,41 @@
+[
+  {
+    "id": "lb_demo_1",
+    "playerName": "Sophia Sterling",
+    "category": "web-dev",
+    "categoryName": "Web Dev & Coding",
+    "score": 10,
+    "totalQuestions": 10,
+    "percentage": 100,
+    "points": 1850,
+    "maxStreak": 10,
+    "timeTakenSecs": 54,
+    "formattedDate": "Oct 4, 2026"
+  },
+  {
+    "id": "lb_demo_2",
+    "playerName": "David Chen",
+    "category": "science-tech",
+    "categoryName": "Science & AI",
+    "score": 9,
+    "totalQuestions": 10,
+    "percentage": 90,
+    "points": 1520,
+    "maxStreak": 7,
+    "timeTakenSecs": 72,
+    "formattedDate": "Oct 3, 2026"
+  },
+  {
+    "id": "lb_demo_3",
+    "playerName": "Elena Vance",
+    "category": "history-geo",
+    "categoryName": "History & World",
+    "score": 8,
+    "totalQuestions": 10,
+    "percentage": 80,
+    "points": 1280,
+    "maxStreak": 5,
+    "timeTakenSecs": 85,
+    "formattedDate": "Oct 2, 2026"
+  }
+]

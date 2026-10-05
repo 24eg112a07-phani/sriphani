@@ -1,0 +1,19 @@
+{
+  "name": "quizpulse-frontend",
+  "version": "1.0.0",
+  "description": "Interactive modern frontend client for QuizPulse Elite Online Quiz Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "quiz-frontend",
+    "html5",
+    "css-glassmorphism",
+    "web-audio",
+    "certificates"
+  ],
+  "author": "QuizPulse Team",
+  "license": "MIT"
+}

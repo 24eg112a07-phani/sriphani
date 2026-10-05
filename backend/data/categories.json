@@ -1,0 +1,42 @@
+[
+  {
+    "id": "web-dev",
+    "name": "Web Dev & Coding",
+    "icon": "💻",
+    "description": "JavaScript, CSS, HTML5, React, Python and modern system architectures.",
+    "color": "#6366f1",
+    "gradient": "linear-gradient(135deg, #6366f1, #8b5cf6)"
+  },
+  {
+    "id": "science-tech",
+    "name": "Science & AI",
+    "icon": "🚀",
+    "description": "Astrophysics, Quantum Mechanics, Artificial Intelligence, and Robotics.",
+    "color": "#06b6d4",
+    "gradient": "linear-gradient(135deg, #06b6d4, #3b82f6)"
+  },
+  {
+    "id": "history-geo",
+    "name": "History & World",
+    "icon": "🌍",
+    "description": "Ancient civilizations, world wonders, empires, and global geography.",
+    "color": "#10b981",
+    "gradient": "linear-gradient(135deg, #10b981, #059669)"
+  },
+  {
+    "id": "pop-culture",
+    "name": "Pop Culture & Cinema",
+    "icon": "🎬",
+    "description": "Oscar-winning movies, iconic music albums, gaming lore, and television.",
+    "color": "#ec4899",
+    "gradient": "linear-gradient(135deg, #ec4899, #f43f5e)"
+  },
+  {
+    "id": "general-knowledge",
+    "name": "Logic & General Brain",
+    "icon": "🧠",
+    "description": "Mind benders, lateral thinking, world records, and general trivia.",
+    "color": "#f59e0b",
+    "gradient": "linear-gradient(135deg, #f59e0b, #d97706)"
+  }
+]

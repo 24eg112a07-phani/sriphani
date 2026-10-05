@@ -1,0 +1,22 @@
+{
+  "name": "quizpulse-backend-api",
+  "version": "1.0.0",
+  "description": "REST API backend for QuizPulse Elite Online Quiz Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "quiz-api",
+    "rest-api",
+    "leaderboard",
+    "grading-engine",
+    "node"
+  ],
+  "author": "QuizPulse Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

@@ -1,0 +1,235 @@
+[
+  {
+    "id": "wd-1",
+    "category": "web-dev",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "Which of the following is NOT a JavaScript primitive data type?",
+    "options": ["String", "Boolean", "Object", "Symbol"],
+    "correct": 2,
+    "explanation": "In JavaScript, primitive types are string, number, bigint, boolean, undefined, symbol, and null. Object is a non-primitive reference type."
+  },
+  {
+    "id": "wd-2",
+    "category": "web-dev",
+    "difficulty": "medium",
+    "type": "code",
+    "question": "What is the output of the following JavaScript snippet?",
+    "code": "console.log(typeof NaN);\nconsole.log(NaN === NaN);",
+    "options": ["\"number\" and true", "\"number\" and false", "\"undefined\" and false", "\"nan\" and true"],
+    "correct": 1,
+    "explanation": "In JavaScript, NaN stands for \"Not-a-Number\", but its typeof is still \"number\". Furthermore, IEEE 754 specifies that NaN is unequal to any value, including itself."
+  },
+  {
+    "id": "wd-3",
+    "category": "web-dev",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "In the CSS Box Model, which property controls the space between the border and the content box?",
+    "options": ["Margin", "Padding", "Outline", "Gap"],
+    "correct": 1,
+    "explanation": "Padding provides inner spacing between the element's content and its border. Margin provides spacing outside the border."
+  },
+  {
+    "id": "wd-4",
+    "category": "web-dev",
+    "difficulty": "hard",
+    "type": "code",
+    "question": "What will be printed to the console?",
+    "code": "const a = [1, 2, 3];\nconst b = a;\nb.push(4);\nconsole.log(a.length, b.length);",
+    "options": ["3 4", "4 4", "4 3", "Error thrown"],
+    "correct": 1,
+    "explanation": "In JavaScript, arrays are assigned by reference. Both `a` and `b` reference the same underlying array memory address, so pushing to `b` alters `a`."
+  },
+  {
+    "id": "wd-5",
+    "category": "web-dev",
+    "difficulty": "hard",
+    "type": "single",
+    "question": "What does the HTTP 429 Status Code specifically indicate?",
+    "options": ["Bad Request Syntax", "Payment Required", "Too Many Requests (Rate Limited)", "Gateway Timeout"],
+    "correct": 2,
+    "explanation": "HTTP 429 Too Many Requests indicates the client has sent too many requests in a given amount of time (rate limiting)."
+  },
+  {
+    "id": "wd-6",
+    "category": "web-dev",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "Which HTML5 element is used to specify a footer for a document or section?",
+    "options": ["<bottom>", "<section-end>", "<footer>", "<subhead>"],
+    "correct": 2,
+    "explanation": "The semantic <footer> tag defines a footer for a document or section in HTML5."
+  },
+  {
+    "id": "wd-7",
+    "category": "web-dev",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "In modern CSS, what function allows you to calculate values dynamically, such as \"width: calc(100% - 40px)\"?",
+    "options": ["compute()", "calc()", "eval()", "math()"],
+    "correct": 1,
+    "explanation": "The CSS calc() function performs calculations to determine CSS property values dynamically across mixed units."
+  },
+  {
+    "id": "wd-8",
+    "category": "web-dev",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "Which git command is used to record changes to the repository with a descriptive message?",
+    "options": ["git push -m", "git save -m", "git commit -m", "git stage -m"],
+    "correct": 2,
+    "explanation": "git commit -m \"message\" captures a snapshot of the project's currently staged changes."
+  },
+  {
+    "id": "wd-9",
+    "category": "web-dev",
+    "difficulty": "hard",
+    "type": "code",
+    "question": "What is the evaluation order of this JavaScript expression?",
+    "code": "console.log(1 + \"2\" + 3);",
+    "options": ["\"123\"", "6", "\"33\"", "\"15\""],
+    "correct": 0,
+    "explanation": "1 + \"2\" performs string coercion yielding \"12\", then \"12\" + 3 performs string concatenation yielding \"123\"."
+  },
+  {
+    "id": "wd-10",
+    "category": "web-dev",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "What does CSS stand for?",
+    "options": ["Cascading Style Sheets", "Computer Screen Styles", "Creative Software Syntax", "Colorful System Sheets"],
+    "correct": 0,
+    "explanation": "CSS stands for Cascading Style Sheets, defining how HTML elements are to be displayed."
+  },
+  {
+    "id": "st-1",
+    "category": "science-tech",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "What is the primary gas that makes up approximately 78% of the Earth's atmosphere?",
+    "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+    "correct": 1,
+    "explanation": "Nitrogen gas (N2) accounts for roughly 78.08% of Earth's atmosphere, followed by Oxygen at around 20.95%."
+  },
+  {
+    "id": "st-2",
+    "category": "science-tech",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "What does the \"T\" stand for in the widely used Transformer architecture in AI (e.g. GPT)?",
+    "options": ["Translation", "Transformer", "Tensor", "Transcription"],
+    "correct": 1,
+    "explanation": "GPT stands for \"Generative Pre-trained Transformer\", based on the landmark 2017 paper \"Attention Is All You Need\"."
+  },
+  {
+    "id": "st-3",
+    "category": "science-tech",
+    "difficulty": "hard",
+    "type": "single",
+    "question": "What physical boundary around a black hole marks the threshold where escape velocity exceeds the speed of light?",
+    "options": ["Accretion Disk", "Ergosphere", "Event Horizon", "Photon Sphere"],
+    "correct": 2,
+    "explanation": "The Event Horizon is the boundary beyond which nothing—not even light—can escape."
+  },
+  {
+    "id": "st-4",
+    "category": "science-tech",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "What is the speed of light in a vacuum (approximate)?",
+    "options": ["30,000 km/s", "300,000 km/s", "3,000,000 km/s", "300 km/s"],
+    "correct": 1,
+    "explanation": "The speed of light in a vacuum (c) is precisely 299,792,458 meters per second, or about 300,000 km/s."
+  },
+  {
+    "id": "st-5",
+    "category": "science-tech",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "Which subatomic particles are found in the nucleus of an atom?",
+    "options": ["Protons and Electrons", "Protons and Neutrons", "Neutrons and Photons", "Electrons and Quarks only"],
+    "correct": 1,
+    "explanation": "The atomic nucleus consists of nucleons: positively charged protons and electrically neutral neutrons."
+  },
+  {
+    "id": "st-6",
+    "category": "science-tech",
+    "difficulty": "hard",
+    "type": "single",
+    "question": "In quantum mechanics, which principle states that you cannot simultaneously measure both position and momentum with arbitrary precision?",
+    "options": ["Pauli Exclusion Principle", "Heisenberg Uncertainty Principle", "Schrödinger Wave Equation", "Planck Quantum Limit"],
+    "correct": 1,
+    "explanation": "Werner Heisenberg formulated the Uncertainty Principle in 1927, fundamentally bounding conjugate physical quantities."
+  },
+  {
+    "id": "st-7",
+    "category": "science-tech",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "Which telescope was launched in December 2021 as the successor to the Hubble Space Telescope?",
+    "options": ["James Webb Space Telescope", "Kepler Observatory", "Spitzer Space Telescope", "Chandra X-ray Observatory"],
+    "correct": 0,
+    "explanation": "The James Webb Space Telescope (JWST) operates in the infrared spectrum at the Sun-Earth L2 Lagrange point."
+  },
+  {
+    "id": "st-8",
+    "category": "science-tech",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "What is the chemical formula for ordinary table salt?",
+    "options": ["KCl", "NaCl", "CaCO3", "NaHCO3"],
+    "correct": 1,
+    "explanation": "Table salt is Sodium Chloride, chemical formula NaCl."
+  },
+  {
+    "id": "hg-1",
+    "category": "history-geo",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "What is the capital city of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    "correct": 2,
+    "explanation": "Canberra was chosen as the compromise capital of Australia in 1908 between rivals Sydney and Melbourne."
+  },
+  {
+    "id": "hg-2",
+    "category": "history-geo",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "In what year did the Apollo 11 mission land humans on the Moon?",
+    "options": ["1965", "1969", "1971", "1975"],
+    "correct": 1,
+    "explanation": "On July 20, 1969, Neil Armstrong and Buzz Aldrin stepped onto the lunar surface."
+  },
+  {
+    "id": "pc-1",
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "Who directed the 2010 mind-bending science fiction film \"Inception\"?",
+    "options": ["Steven Spielberg", "Christopher Nolan", "Denis Villeneuve", "James Cameron"],
+    "correct": 1,
+    "explanation": "Christopher Nolan wrote and directed \"Inception\", starring Leonardo DiCaprio."
+  },
+  {
+    "id": "gk-1",
+    "category": "general-knowledge",
+    "difficulty": "easy",
+    "type": "single",
+    "question": "How many keys does a standard full-size modern acoustic piano have?",
+    "options": ["76", "88", "92", "104"],
+    "correct": 1,
+    "explanation": "A standard piano features 88 keys: 52 white keys and 36 black keys."
+  },
+  {
+    "id": "gk-2",
+    "category": "general-knowledge",
+    "difficulty": "medium",
+    "type": "single",
+    "question": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+    "options": ["$0.10", "$0.05", "$0.15", "$0.01"],
+    "correct": 1,
+    "explanation": "Let ball = x. Bat = x + 1.00. x + (x + 1.00) = 1.10 => 2x = 0.10 => x = $0.05. The ball costs 5 cents."
+  }
+]

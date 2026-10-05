@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizPulse Elite — Next-Gen Interactive Quiz Platform</title>
+  <meta name="description" content="Master coding, science, history, and pop culture with QuizPulse Elite. Features live streak multipliers, lifelines, interactive certificates, and custom quiz builder." />
+  <meta name="theme-color" content="#0a0d14" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="QuizPulse Elite — Interactive Knowledge Platform" />
+  <meta property="og:description" content="Level up your knowledge with real-time scoring, sound effects, verified certificates, and customizable quizzes." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+</head>
+<body>
+  <!-- Ambient Glow Canvas Lights -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
+    <div class="glow-orb-3"></div>
+  </div>
+
+  <!-- SVG Linear Gradients Definition -->
+  <svg width="0" height="0" class="hidden">
+    <defs>
+      <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6366f1" />
+        <stop offset="50%" stop-color="#a855f7" />
+        <stop offset="100%" stop-color="#06b6d4" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="app-container">
+    <!-- Main Header -->
+    <header class="main-header">
+      <div class="brand-wrapper" id="brand-home-link" title="QuizPulse Elite Home">
+        <div class="brand-logo-icon">⚡</div>
+        <div class="brand-text">
+          <h1>QuizPulse</h1>
+          <span class="brand-tagline">Elite Arena</span>
+        </div>
+      </div>
+
+      <!-- Player Header Stats -->
+      <div class="user-profile-badge">
+        <span class="user-level" id="user-level-badge">Lvl 1</span>
+        <span class="user-rank" id="user-rank-title">🌱 Inquisitive Novice</span>
+        <span class="user-xp" id="user-xp-badge">⚡ 0 XP</span>
+      </div>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <button type="button" class="btn-nav" id="nav-leaderboard-btn" title="View Hall of Fame">
+          <span>🏆</span> Leaderboard
+        </button>
+        <button type="button" class="btn-nav" id="nav-custom-quiz-btn" title="Create or Import Quiz">
+          <span>✨</span> Create Quiz
+        </button>
+        <button type="button" class="btn-icon" id="sound-toggle-btn" title="Toggle Sound">
+          <span class="icon">🔊</span>
+        </button>
+        <button type="button" class="btn-icon" id="theme-toggle-btn" title="Toggle Theme">
+          <span class="icon">☀️</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==========================================
+         SCREEN 1: HOME & DISCOVERY
+         ========================================== -->
+    <main class="screen" id="screen-home">
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <div class="hero-pill">🔥 50+ Verified Challenges • Real-Time Combat</div>
+        <h2 class="hero-title">Sharpen Your Mind.<br /><span>Conquer Knowledge.</span></h2>
+        <p class="hero-subtitle">
+          Test your wits across web development, astrophysics, world history, and pop culture.
+          Earn streak multipliers, unlock certificates, and build your own custom quizzes.
+        </p>
+        <div class="hero-cta-group">
+          <button type="button" class="btn-primary" id="quick-start-btn">
+            <span>⚡</span> Quick Play Blitz
+          </button>
+          <a href="#custom-panel" class="btn-secondary">
+            <span>⚙️</span> Custom Game Setup
+          </a>
+        </div>
+      </section>
+
+      <!-- Category Picker -->
+      <section class="section-container">
+        <div class="section-header">
+          <div>
+            <h3 class="section-title"><span>📂</span> Select Category</h3>
+            <p class="section-subtitle">Choose from verified packs or your custom crafted quizzes</p>
+          </div>
+        </div>
+        <div class="category-grid" id="category-grid">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </section>
+
+      <!-- Match Configurator -->
+      <section class="configurator-panel" id="custom-panel">
+        <div class="section-header">
+          <div>
+            <h3 class="section-title"><span>⚙️</span> Match Rules & Configuration</h3>
+            <p class="section-subtitle">Fine-tune the difficulty, question length, and timer</p>
+          </div>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="config-row">
+          <label class="config-label"><span>🎯</span> Difficulty Level:</label>
+          <div class="pill-group">
+            <button type="button" class="filter-pill active" data-difficulty="all">All Difficulties</button>
+            <button type="button" class="filter-pill" data-difficulty="easy">Easy (Casual)</button>
+            <button type="button" class="filter-pill" data-difficulty="medium">Medium (Standard)</button>
+            <button type="button" class="filter-pill" data-difficulty="hard">Hard (Mastery)</button>
+          </div>
+        </div>
+
+        <!-- Question Count -->
+        <div class="config-row">
+          <label class="config-label"><span>🔢</span> Number of Questions:</label>
+          <div class="pill-group">
+            <button type="button" class="filter-pill" data-count="5">5 Quick</button>
+            <button type="button" class="filter-pill active" data-count="10">10 Balanced</button>
+            <button type="button" class="filter-pill" data-count="15">15 Intensive</button>
+            <button type="button" class="filter-pill" data-count="20">20 Marathon</button>
+          </div>
+        </div>
+
+        <!-- Timer Mode -->
+        <div class="config-row">
+          <label class="config-label"><span>⏱</span> Speed & Timer:</label>
+          <div class="pill-group">
+            <button type="button" class="filter-pill" data-timer="0">Relaxed (No Timer)</button>
+            <button type="button" class="filter-pill active" data-timer="20">Standard (20s/Question)</button>
+            <button type="button" class="filter-pill" data-timer="10">Blitz Rush (10s/Question)</button>
+          </div>
+        </div>
+
+        <!-- Launch Button -->
+        <div class="start-action-row">
+          <button type="button" class="btn-primary" id="start-quiz-btn">
+            <span>🚀</span> Start Assessment Now
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================
+         SCREEN 2: ACTIVE QUIZ GAMEPLAY
+         ========================================== -->
+    <section class="screen hidden" id="screen-quiz">
+      <div class="quiz-container">
+        <!-- Top Stats Row -->
+        <div class="quiz-top-bar">
+          <div class="quiz-meta-left">
+            <span class="badge-category" id="quiz-category-badge">Web Dev & Code</span>
+            <span class="question-counter" id="question-number">Question 1 of 10</span>
+          </div>
+
+          <div class="quiz-meta-right">
+            <!-- Streak Flame Badge -->
+            <div class="badge-streak hidden" id="streak-badge">
+              <span id="streak-count">2x STREAK! 🔥</span>
+            </div>
+
+            <!-- Points Badge -->
+            <div class="badge-points" id="points-badge">
+              0 pts
+            </div>
+
+            <!-- Circular SVG Countdown Timer -->
+            <div class="timer-widget" id="timer-widget">
+              <svg class="timer-svg" viewBox="0 0 54 54">
+                <circle class="timer-circle-bg" cx="27" cy="27" r="22"></circle>
+                <circle class="timer-circle-val" id="timer-progress" cx="27" cy="27" r="22"></circle>
+              </svg>
+              <div class="timer-countdown" id="timer-text">20</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Progress Track -->
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-bar"></div>
+        </div>
+
+        <!-- Lifelines Bar -->
+        <div class="lifelines-bar">
+          <button type="button" class="btn-lifeline" id="lifeline-5050" title="Remove 2 incorrect options (1 use per quiz)">
+            <span>🎭</span> 50:50 Lifeline
+          </button>
+          <button type="button" class="btn-lifeline" id="lifeline-time" title="Add 15 extra seconds (1 use per quiz)">
+            <span>⏳</span> +15s Freeze
+          </button>
+          <button type="button" class="btn-lifeline" id="lifeline-skip" title="Skip question without score penalty">
+            <span>↷</span> Skip
+          </button>
+        </div>
+
+        <!-- Question Card -->
+        <div class="question-card">
+          <h3 class="question-prompt" id="question-text">Loading question...</h3>
+          <pre class="code-snippet-box hidden" id="question-code-block"></pre>
+
+          <!-- 4 Interactive Answer Options -->
+          <div class="options-grid" id="options-grid">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <!-- Educational Explanation Drawer (Revealed after answer) -->
+          <div class="explanation-card hidden" id="explanation-box">
+            <div id="explanation-text"></div>
+            <div class="explanation-action-row">
+              <button type="button" class="btn-primary" id="next-question-btn">
+                Next Question →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Footer Controls -->
+        <div class="quiz-footer-actions">
+          <button type="button" class="btn-quit" id="quit-quiz-btn">✕ Abandon Quiz</button>
+          <span class="footer-tag">💡 Tip: Use keyboard keys [1, 2, 3, 4] or [A, B, C, D] to answer</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SCREEN 3: RESULTS & ANALYTICS
+         ========================================== -->
+    <section class="screen hidden" id="screen-results">
+      <div class="results-container">
+        <!-- Results Hero Card -->
+        <div class="results-hero-card">
+          <!-- Animated Score Percentage Ring -->
+          <div class="result-ring-wrapper">
+            <svg class="result-ring-svg" viewBox="0 0 140 140">
+              <circle class="ring-bg" cx="70" cy="70" r="45"></circle>
+              <circle class="ring-fill" id="result-score-ring" cx="70" cy="70" r="45"></circle>
+            </svg>
+            <span class="result-pct-display" id="result-score-pct">0%</span>
+          </div>
+
+          <!-- Tier Badge -->
+          <div class="result-tier-badge">
+            <span class="badge-icon" id="result-badge-icon">👑</span>
+            <span class="badge-title" id="result-badge-title">Grandmaster</span>
+          </div>
+
+          <p class="result-category-subtitle" id="result-category">Web Development & Code Assessment</p>
+
+          <!-- Stats 4-Grid -->
+          <div class="stat-cards-grid">
+            <div class="stat-card">
+              <div class="stat-val" id="stat-points">0</div>
+              <div class="stat-label">Total Points</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val" id="stat-accuracy">0/10</div>
+              <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val" id="stat-streak">0</div>
+              <div class="stat-label">Best Streak</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-val" id="stat-time">0s</div>
+              <div class="stat-label">Time Taken</div>
+            </div>
+          </div>
+
+          <!-- Results Actions -->
+          <div class="results-actions-group">
+            <button type="button" class="btn-primary" id="play-again-btn">
+              <span>🔄</span> Play Again
+            </button>
+            <button type="button" class="btn-secondary" id="open-certificate-btn">
+              <span>📜</span> View Certificate
+            </button>
+            <button type="button" class="btn-secondary" id="share-results-btn">
+              <span>📢</span> Share Score
+            </button>
+            <button type="button" class="btn-secondary" id="home-return-btn">
+              <span>🏠</span> Home
+            </button>
+          </div>
+        </div>
+
+        <!-- Question Review Section -->
+        <div class="review-section">
+          <div class="review-controls">
+            <h3 class="section-title"><span>📋</span> Detailed Review & Explanations</h3>
+            <div class="review-filters">
+              <button type="button" class="review-filter-btn active" data-filter="all">All</button>
+              <button type="button" class="review-filter-btn" data-filter="correct">Correct Only</button>
+              <button type="button" class="review-filter-btn" data-filter="wrong">Mistakes Only</button>
+            </div>
+          </div>
+          <div class="review-list" id="review-container">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p><strong>QuizPulse Elite</strong> — Crafted for knowledge seekers, developers, and trivia masters.</p>
+        <div class="footer-badges">
+          <span class="footer-tag">⚡ Zero Latency Web Audio</span>
+          <span class="footer-tag">🎨 Pure Vanilla CSS</span>
+          <span class="footer-tag">🚀 100% Deploy Ready</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==========================================
+       MODAL 1: CERTIFICATE OF ACHIEVEMENT
+       ========================================== -->
+  <div class="modal-backdrop hidden" id="certificate-modal">
+    <div class="modal-card certificate-modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><span>📜</span> Official Certificate of Excellence</h3>
+        <button type="button" class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="cert-input-wrapper">
+          <label for="cert-player-name">Your Full Name (Appears on Certificate):</label>
+          <input type="text" id="cert-player-name" placeholder="Enter student or player name..." />
+        </div>
+        <div class="cert-canvas-container">
+          <canvas id="certificate-canvas"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary modal-close">Close</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button type="button" class="btn-secondary" id="print-cert-btn">
+            <span>🖨️</span> Print / PDF
+          </button>
+          <button type="button" class="btn-primary" id="download-cert-btn">
+            <span>📥</span> Download High-Res PNG
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: HALL OF FAME LEADERBOARD
+       ========================================== -->
+  <div class="modal-backdrop hidden" id="leaderboard-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><span>🏆</span> Hall of Fame Leaderboard</h3>
+        <button type="button" class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="leaderboard-categories">
+          <button type="button" class="leaderboard-cat-tab active" data-cat="all">All Categories</button>
+          <button type="button" class="leaderboard-cat-tab" data-cat="web-dev">Web Dev</button>
+          <button type="button" class="leaderboard-cat-tab" data-cat="science-tech">Science</button>
+          <button type="button" class="leaderboard-cat-tab" data-cat="history-geo">History</button>
+          <button type="button" class="leaderboard-cat-tab" data-cat="pop-culture">Pop Culture</button>
+          <button type="button" class="leaderboard-cat-tab" data-cat="general-knowledge">Logic</button>
+        </div>
+        <div class="leaderboard-list" id="leaderboard-list">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-quit" id="clear-leaderboard-btn">Clear History</button>
+        <button type="button" class="btn-primary modal-close">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 3: CUSTOM QUIZ BUILDER & JSON IMPORT
+       ========================================== -->
+  <div class="modal-backdrop hidden" id="custom-quiz-modal">
+    <div class="modal-card builder-modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><span>✨</span> Custom Quiz Builder & Importer</h3>
+        <button type="button" class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="builder-actions-top">
+          <div>
+            <label for="builder-import-file" class="btn-secondary" style="display: inline-flex; cursor: pointer; margin-right: 0.5rem;">
+              <span>📁</span> Import JSON File
+            </label>
+            <input type="file" id="builder-import-file" accept=".json" class="hidden" />
+            <button type="button" class="btn-secondary" id="builder-export-sample-btn">
+              <span>📄</span> Download Sample JSON
+            </button>
+          </div>
+          <span class="footer-tag">Create your custom assessment</span>
+        </div>
+
+        <form id="custom-quiz-form">
+          <div class="form-group">
+            <label for="builder-quiz-title">Quiz Title:</label>
+            <input type="text" id="builder-quiz-title" placeholder="e.g. Master React Hooks Challenge" required />
+          </div>
+
+          <div class="form-group">
+            <label for="builder-quiz-desc">Brief Description:</label>
+            <input type="text" id="builder-quiz-desc" placeholder="e.g. Test understanding of useEffect, useMemo, and custom hooks" />
+          </div>
+
+          <!-- Questions List -->
+          <div id="builder-questions-container">
+            <!-- Dynamic question cards injected here -->
+          </div>
+
+          <button type="button" class="btn-secondary" id="builder-add-q-btn" style="width: 100%; margin-bottom: 1.5rem;">
+            <span>➕</span> Add Another Question
+          </button>
+
+          <div class="modal-footer" style="padding: 0; border: none;">
+            <button type="button" class="btn-secondary modal-close">Cancel</button>
+            <button type="submit" class="btn-primary">
+              <span>💾</span> Save & Register Quiz
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script src="js/custom-quiz.js"></script>
+  <script src="js/quiz-engine.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

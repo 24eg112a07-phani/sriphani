@@ -1,0 +1,26 @@
+{
+  "title": "Quantum Physics & Cosmos Blitz",
+  "description": "A high-octane physics quiz covering quarks, relativity, astrophysics, and black holes.",
+  "category": "science-tech",
+  "categoryName": "Cosmos & Quantum",
+  "questions": [
+    {
+      "question": "What is the theoretical boundary around a black hole beyond which nothing can escape?",
+      "options": ["Ergosphere", "Photon Sphere", "Event Horizon", "Accretion Disk"],
+      "correct": 2,
+      "explanation": "The Event Horizon is the boundary where escape velocity equals or exceeds the speed of light."
+    },
+    {
+      "question": "Which elementary particle is considered the carrier of the electromagnetic force?",
+      "options": ["Gluon", "Photon", "W Boson", "Graviton"],
+      "correct": 1,
+      "explanation": "Photons are the gauge bosons responsible for mediating the electromagnetic interaction."
+    },
+    {
+      "question": "What paradox illustrates the bizarre principle of quantum superposition using a feline?",
+      "options": ["Fermi Paradox", "Schrödinger’s Cat", "Twin Paradox", "Olbers’ Paradox"],
+      "correct": 1,
+      "explanation": "Erwin Schrödinger proposed the thought experiment in 1935 to highlight the strange nature of quantum superposition."
+    }
+  ]
+}
